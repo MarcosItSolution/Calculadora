@@ -1,0 +1,8 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/slnx.sqlite
+/API/TesteTecnico/.vs/TesteTecnico/config/applicationhost.config
+/API/TesteTecnico/.vs/TesteTecnico/DesignTimeBuild/.dtbcache.v2
+/API/TesteTecnico/.vs/TesteTecnico/v16/.suo
