@@ -1,0 +1,36 @@
+<section class="container criar-pensamentos ff-inter">
+    <header class="header">
+        <h2>Calculadora<br><br> Para calcular, preencha os dados a seguir:</h2>
+    </header>
+    <form>
+        <label for="numero1">Digite o primeiro número</label>
+        <input type="number" class="input" id="n1" name="n1" placeholder="Digite o primeiro número"
+            [(ngModel)]="model.numero1" (change)="limparEsconderTotal()">
+        <label for="numero2">Digite o segundo número</label>
+        <input type="number" class="input" id="n2" name="n2" placeholder="Digite o segundo número"
+            [(ngModel)]="model.numero2" (change)="limparEsconderTotal()">
+
+        <label for="modelo">Selecione o operador do cálculo:</label>
+        <div class="container-radio">
+            <div *ngFor="let item of listaOperacao; let i = index" class="radio-modelo">
+                <label for="modelo{{i}}">
+                    <input type="radio" id="modelo{{i}}" value={{item.id}} name="modelo-card{{i}}" [(ngModel)]="model.tipoOperacao">
+                    <div class="custom-radio">
+                        <span></span>
+                    </div>
+                    <span>{{item.nome}}</span>
+                </label>
+            </div>
+        </div>
+
+        <div *ngIf="exibirTotal">
+            <label for="total">Total</label> <br>
+            <input type="number" class="input" id="total" name="total" [(ngModel)]="model.total">
+        </div>
+
+        <div class="acoes">
+            <button class="botao" (click)="salvarConteudo()">Calcular</button>
+            <button class="botao" (click)="limparConteudo()">Limpar dados</button>
+        </div>
+    </form>
+</section>
